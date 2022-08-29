@@ -1,0 +1,95 @@
+.root {
+    display: flex;
+    align-items: center;
+
+    input {
+        display: inline-block;
+        width: 130px;
+        background: rgba(255, 255, 255, 0.123);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        padding: 6px;
+        margin-left: 170px;
+        color: white;
+        cursor: pointer;
+        transition: 0.2s ease-in;
+    }
+
+    input:hover {
+        border: 1px solid rgba(170, 170, 170, 0.4);
+        background: transparent;
+    }
+
+    input:focus {
+        outline: 3px solid rgba(255, 255, 255, 0.26);
+        background: transparent;
+    }
+
+    button {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.192);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        padding: 3px 7px;
+        margin-left: 10px;
+        cursor: pointer;
+        transition: 0.2s ease-in;
+
+        img {
+            width: 20px;
+            height: auto;
+        }
+    }
+
+    button:hover {
+        border: 1px solid rgba(170, 170, 170, 0.4);
+        background: rgba(255, 255, 255, 0.123);
+    }
+}
+
+@media (max-width: 750px) {
+    .root {
+        input {
+            width: 100px;
+            margin-left: 60px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .root {
+        input {
+            width: 60px;
+            margin-left: 15px;
+            padding: 5px;
+            font-size: 10px;
+            border-radius: 5px;
+        }
+
+        button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.192);
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            margin-left: 10px;
+            cursor: pointer;
+            transition: 0.2s ease-in;
+    
+            img {
+                width: 10px;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 390px) {
+    .root {
+        margin-top: 15px;
+
+        input {
+            margin-left: 0px;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,95 @@
+.root {
+    position: relative;
+    padding: 10px 50px;
+    border-radius: 10px; 
+    background: rgba(0, 0, 0, 0.3);
+
+    .toMain {
+        font-weight: 600;
+        position: absolute;
+        top: 30px;
+        text-decoration: none;
+        border-radius: 10px;
+        padding: 1px 3px;
+        transition: 0.2s ease-in;
+
+        div {            
+            img {
+                width: 30px;
+                height: auto;
+            }
+        }
+    }
+
+    .toMain:hover {
+        background: rgb(255, 255, 255, 0.1);
+    }
+
+    .notFoundIcon {
+        display: block;
+        width: 300px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    h3 {
+        font-size: 20px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 520px) {
+    .root {
+        padding: 10px 20px;
+
+        .toMain {
+            font-size: 10px;
+            top: 20px;
+
+            div {
+    
+                img {
+                    width: 20px;
+                }
+            }
+        }
+    
+        .notFoundIcon {
+            width: 150px;
+        }
+    
+        h3 {
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media(max-width: 330px) {
+    .root {
+        padding: 10px 10px;
+
+        .toMain {
+            font-size: 6px;
+            top: 10px;
+
+
+            div {
+                img {
+                    width: 10px;
+                }
+            }
+        }
+
+        .notFoundIcon {
+            width: 80px;
+        }
+    
+        h3 {
+            font-size: 8px;
+            margin-bottom: 10px;
+        }
+    }
+}

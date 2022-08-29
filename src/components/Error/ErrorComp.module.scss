@@ -1,0 +1,65 @@
+.root {
+    position: relative;
+    margin: 0 auto;
+
+    .backIcon {
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        width: 40px;
+        padding: 2px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.2s ease-in;
+    }
+
+    .backIcon:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+
+    .errorIcon {
+        display: block;
+        margin: 0 auto;
+        width: 250px;
+    }
+
+    h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .root {    
+        .backIcon {
+            width: 35px;
+        }    
+    
+        .errorIcon {
+            width: 200px;
+        }
+    
+        h2 {
+            font-size: 25px;
+        }
+    }
+}
+
+@media (max-width: 390px) {
+    .root {    
+        .backIcon {
+            width: 25px;
+            top: -15px;
+            left: -15px;
+        }    
+    
+        .errorIcon {
+            width: 100px;
+        }
+    
+        h2 {
+            font-size: 14px;
+        }
+    }
+}

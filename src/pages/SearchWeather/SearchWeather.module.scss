@@ -1,0 +1,250 @@
+.root {
+    animation: transform 0.5s ease-in;
+
+    @keyframes transform {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    &_title {
+        button {
+            background: transparent;
+            border: none;
+            margin-bottom: 20px;
+            cursor: pointer;
+            padding: 1px;
+            border-radius: 10px;
+            transition: 0.2s ease-in;
+
+            img {
+                width: 30px;
+                height: auto;
+            }
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        h3 {
+            font-size: 25px;
+            text-align: center;
+        }
+
+        &_city {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 25px;
+                height: auto;
+            }
+
+            h3 {
+                margin-left: 10px;
+                font-size: 15px;
+            }
+        }
+
+        &_coords {
+            font-size: 10px;
+            text-align: center;
+        }
+
+        &_temp {
+            margin-top: 80px;
+            text-align: center;
+
+            img {
+                width: 110px;
+                height: auto;
+            }
+            
+            h1 {
+                position: relative;
+                font-size: 70px;
+                font-weight: 800;
+                margin: 10px 80px 0px 0px;
+
+                .degs {
+                    position: absolute;
+                    top: 10px;
+                    right: -40px;
+                    font-size: 30px;
+                    font-weight: 700;
+                }
+            }
+
+            .descr {
+                    font-size: 20px;
+                    font-weight: 800;
+                }
+        }
+    }
+
+    &_other {
+        max-width: 600px;
+        display: flex;
+        justify-content: space-between;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 20px 50px;
+        margin-top: 100px;
+        border-radius: 10px;
+
+        &_item {
+            font-size: 13px;
+            width: 300px;
+            margin-top: 10px;
+
+
+            div {
+                font-size: 17px;
+                font-weight: 800;
+            }
+        }
+
+        &_item:first-child {
+            margin-top: 0;
+        }
+    }
+
+    @media(max-width: 750px) {
+        &_title_temp h1 .degs {
+            right: -40px;
+        }
+
+        &_other {
+            max-width: 450px;
+
+            &_item {
+                width: 170px;
+            }
+        }
+    }
+
+    @media(max-width: 575px) {
+        &_title {
+            button {    
+                img {
+                    width: 20px;
+                    height: auto;
+                }
+            }
+
+            h3 {
+                font-size: 16px;
+            }
+        }
+
+        &_title_temp {
+            margin-top: 50px;
+
+            h1 {
+                font-size: 60px;
+                margin-right: 40px;
+
+                .degs {
+                    font-size: 25px;
+                    right: -35px;
+                }
+            }
+        }
+
+        &_other {
+            display: block;
+            max-width: 320px;
+            margin-top: 50px;
+
+            &_item {
+                width: 170px;
+            }
+
+            &_item:first-child {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    @media(max-width: 390px) {
+        &_title {
+            button {    
+                img {
+                    width: 15px;
+                    height: auto;
+                }
+            }
+
+            h3 {
+                font-size: 12px;
+            }
+
+            &_city {
+                img {
+                    width: 10px;
+                    height: auto;
+                }
+    
+                h3 {
+                    margin-left: 3px;
+                    font-size: 8px;
+                }
+            }
+    
+            &_coords {
+                font-size: 5px;
+                text-align: center;
+            }
+        }
+
+        &_title_temp {
+            margin-top: 50px;
+
+            div {
+                font-size: 12px;
+            }
+
+            img {
+                width: 90px;
+                height: auto;
+            }
+
+            h1 {
+                font-size: 45px;
+                margin-right: 30px;
+
+                .degs {
+                    font-size: 20px;
+                    right: -30px;
+                }
+            }
+
+            .descr {
+                font-size: 15px;
+            }
+        }
+
+        &_other {
+            display: block;
+            margin: 50px auto;
+            padding: 20px;
+
+            &_item {
+                font-size: 11px;
+                width: 110px;
+
+                div {
+                    font-size: 13px;
+                }
+            }
+
+            &_item:first-child {
+                margin-top: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+.root {
+    animation: opacity 0.5s ease-in;
+
+    @keyframes opacity {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .backIcon {
+        width: 35px;
+        padding: 2px;
+        border-radius: 10px;
+        transition: 0.2s ease-in;
+    }
+
+    .backIcon:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .oneDay {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        margin-top: 10px;
+
+        .partOfDay {
+            width: 110px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 9px;
+            line-height: 11px;
+            letter-spacing: 1px;
+            padding: 5px;
+            margin: 10px;
+            border: 1px solid white;
+            border-radius: 10px;
+
+            img {
+                display: block;
+                width: 45px;
+                height: auto;
+                margin-right: 5px;
+            }
+        }
+    }
+}
