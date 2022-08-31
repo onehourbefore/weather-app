@@ -1,33 +1,4 @@
 
-export type CurrentDataType = {
-    city: string
-    country: string
-    temp: number | null
-    main: string
-    descr: string
-    feelsLike: number | null
-    pressure: number | null
-    humidity: number | null
-    wind: number | null
-    sunrise: number | null
-    sunset: number | null
-    windDegs: number | null
-    cloudsNum: number | null
-    visibility: number | null
-}
-
-export enum CurrentStatus {
-    _IDLE = 'idle',
-    _LOADING = 'loading',
-    _ERROR = 'error',
-    _SUCCESS = 'success'
-}
-
-export interface ICurrent {
-    currentData: CurrentDataType
-    status: CurrentStatus
-}
-
 export type AxiosCurrentDataType = {
     "coord": {
       "lon": number,

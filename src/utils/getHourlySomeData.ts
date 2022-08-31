@@ -1,13 +1,13 @@
-import { AxiosHourlyDataType } from "../models/hourlyModels"
+import { AxiosHourlyOneItemType, HourlyDataType } from "../models/hourlyModels"
 
-export const getHourlySomeData = (list: AxiosHourlyDataType []) => {
-    let data: any []= []
+export const getHourlySomeData = (list: AxiosHourlyOneItemType []) => {
+    let data: any [] = []
     list.map (item => {
         const obj = {
             temp: item.main.temp,
             main: item.weather[0].main,
             wind: item.wind.speed,
-            dt: item.dt_txt
+            dt: String (item.dt_txt)
         }
         data.push (obj)
     })

@@ -6,19 +6,7 @@ export type HourlyDataType = {
     dt: string
 }
 
-export enum HourlyStatus {
-    _IDLE = 'idle',
-    _LOADING = 'loading',
-    _ERROR = 'error',
-    _SUCCESS = 'success'
-}
-
-export interface IHourly {
-    hourlyData: HourlyDataType [] | []
-    status: HourlyStatus
-}
-
-export type AxiosHourlyDataType = {
+export type AxiosHourlyOneItemType = {
   "dt": number,
   "main": {
     "temp": number,
@@ -53,4 +41,11 @@ export type AxiosHourlyDataType = {
     "pod": string
   },
   "dt_txt": number
+}
+
+export type AxiosHourlyDataType = {
+  "cod": "200",
+  "message": 0,
+  "cnt": 40,
+  "list": AxiosHourlyOneItemType []
 }

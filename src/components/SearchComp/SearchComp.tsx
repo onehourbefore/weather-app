@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { useAppDispatch } from '../../store'
-import { setQuery } from '../../store/search/slice'
+import { changeQuery } from '../../store/active/slice'
 import search from '../../assets/png/search.png'
 import cl from './SearchComp.module.scss'
 
@@ -18,7 +18,7 @@ const SearchComp: React.FC = () => {
 
     const toSubmit = () => {
         if (!searchValue) return
-        dispatch (setQuery (searchValue))
+        dispatch (changeQuery (searchValue))
         setSearchValue ('')
     }
 

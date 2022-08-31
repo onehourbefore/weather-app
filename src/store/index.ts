@@ -2,15 +2,13 @@ import { configureStore } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux'
 
 import coords from './coords/slice'
-import current from './current/slice'
-import hourly from './hourly/slice'
 import active from './active/slice'
-import search from './search/slice'
+import { apiSlice } from '../api/apiSlice'
 
 
 export const store = configureStore ({
-    reducer: { coords, current, hourly, active, search },
-    middleware: getDefaultMiddleware => getDefaultMiddleware (),
+    reducer: { coords, active, [apiSlice.reducerPath]: apiSlice.reducer },
+    middleware: getDefaultMiddleware => getDefaultMiddleware ().concat (apiSlice.middleware),
     devTools: process.env.NODE_ENV !== 'production'
 })
 

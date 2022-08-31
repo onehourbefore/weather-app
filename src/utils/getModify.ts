@@ -1,4 +1,5 @@
 import { HourlyDataType } from "../models/hourlyModels"
+import { getHourlySomeData } from "./getHourlySomeData"
 
 
 export const getModifyCoords = (str: string) => {
@@ -27,21 +28,21 @@ export const getModifySunData = (s: number) => {
     return `${hoursModify}:${minutesModify}`
 }
 
-export const getModifyHourlyData = (arrData: any) => {
-    if (!arrData.length) return
+export const getModifyHourlyData = (arr: any) => {
+    const arrSomeData: HourlyDataType [] = getHourlySomeData (arr)
 
-    let day = arrData[0].dt.slice (8, 10)
+    let day = arrSomeData[0].dt.slice (8, 10)
     let counter = 0
     let modifyHourlyData: any = [[]]
 
-    for (let i = 0; i < arrData.length; i++) {
-        if (day === arrData[i].dt.slice (8, 10)) {
-            modifyHourlyData[counter].push (arrData[i])
+    for (let i = 0; i < arrSomeData.length; i++) {
+        if (day === arrSomeData[i].dt.slice (8, 10)) {
+            modifyHourlyData[counter].push (arrSomeData[i])
             continue
         }
-        day = arrData[i].dt.slice (8, 10)
+        day = arrSomeData[i].dt.slice (8, 10)
         modifyHourlyData.push ([])
-        modifyHourlyData[counter + 1].push (arrData[i])
+        modifyHourlyData[counter + 1].push (arrSomeData[i])
         counter ++
     }
 

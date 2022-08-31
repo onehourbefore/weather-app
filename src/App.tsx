@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
-
-import CurrentWeather from './pages/CurrentWeather/CurrentWeather'
-import HourlyWeather from './pages/HourlyWeather/HourlyWeather'
-import SearchWeather from './pages/SearchWeather/SearchWeather'
-import Page404 from './pages/Page404/Page404'
 
 import { useAppDispatch } from './store'
 import { getLat, getLon } from './store/coords/slice'
 
+import CurrentWeather from './pages/CurrentWeather'
+import Spinner from './components/Spinner/Spinner'
 import cl from './styles/App.module.scss'
+
+const HourlyWeather = React.lazy (() => import ('./pages/HourlyWeather'))
+const SearchWeather = React.lazy (() => import ('./pages/SearchWeather'))
+const Page404 = React.lazy (() => import ('./pages/Page404/Page404'))
 
 
 const App: React.FC = () => {
@@ -25,7 +26,6 @@ const App: React.FC = () => {
         }
     })
 }
-
   React.useEffect (() => {
     getCoords ()
   }, [])
@@ -35,9 +35,19 @@ const App: React.FC = () => {
       <div className={cl.root_container}>
         <Routes>
           <Route path="/" element={<CurrentWeather />} />
-          <Route path="/hourly" element={<HourlyWeather />} />
-          <Route path="/search" element={<SearchWeather />} />
-          <Route path="*" element={<Page404 />} />
+          <Route path="/hourly" element={
+            <Suspense fallback={<Spinner />}>
+              <HourlyWeather />
+            </Suspense>} />
+          <Route path="/search" element={
+            <Suspense fallback={<Spinner />}>
+              <SearchWeather />
+            </Suspense>} />
+          <Route path="*" element={
+            <Suspense fallback={<Spinner />}>
+              <Page404 />
+            </Suspense>
+          } />
         </Routes>
       </div>
     </div>

@@ -8,5 +8,6 @@ export enum PageStatus {
 }
 
 export interface IActive {
-    page: PageStatus
+    page: PageStatus,
+    query: string
 }

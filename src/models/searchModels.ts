@@ -1,31 +1,44 @@
 
-export type SearchDataType = {
-    coords: {lat: string, lon: string},
-    city: string
-    country: string
-    temp: number | null
-    main: string
-    descr: string
-    pressure: number | null
-    humidity: number | null
-    windSpeed: number | null
-    windDeg: number | null
-    cloudsNum: number | null
-    visibility: number | null
-    sunrise: number | null
-    sunset: number | null
-}
-
-export enum SearchStatus {
-    _IDLE = 'idle',
-    _LOADING = 'loading',
-    _SUCCESS = 'success',
-    _ERROR = 'error'
-}
-
-export interface ISearch {
-    searchData: SearchDataType,
-    status: SearchStatus,
-    query: string
+export type AxiosSearchDataType = {
+    "coord": {
+        "lon": number,
+        "lat": number
+      },
+      "weather": [
+        {
+          "id": number,
+          "main": string,
+          "description": string,
+          "icon": string
+        }
+      ],
+      "base": string,
+      "main": {
+        "temp": number,
+        "pressure": number,
+        "humidity": number,
+        "temp_min": number,
+        "temp_max": number
+      },
+      "visibility": number,
+      "wind": {
+        "speed": number,
+        "deg": number
+      },
+      "clouds": {
+        "all": number
+      },
+      "dt": number,
+      "sys": {
+        "type": number,
+        "id": number,
+        "message": number,
+        "country": string,
+        "sunrise": number,
+        "sunset": number
+      },
+      "id": number,
+      "name": string,
+      "cod": number
 }
 
